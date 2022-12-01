@@ -1,9 +1,7 @@
-# template day
-
 import time
 
 
-def solve():
+def solve_day02():
     solve_day02_1()
     solve_day02_2()
 
@@ -23,13 +21,13 @@ def solve_day02_1():
 
     # define variables
 
-    # solution
-    solution = 0
+    # result
+    result = 0
 
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day 0 (1) solution: {} (execution time: {} ms)'.format(solution, round((end_time - start_time) * 1000, 2)))
+    print('Day 0 (1) solution: {} (execution time: {} ms)'.format(result, round((end_time - start_time) * 1000, 2)))
 
 
 def solve_day02_2():

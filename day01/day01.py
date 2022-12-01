@@ -1,7 +1,7 @@
 import time
 
 
-def solve():
+def solve_day01():
     solve_day01_1()
     solve_day01_2()
 

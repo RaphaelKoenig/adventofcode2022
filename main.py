@@ -1,10 +1,10 @@
-import day01.day01 as day01
-import day02.day02 as day02
+from day01.day01 import solve_day01
+from day02.day02 import solve_day02
 
 
 def solve_all():
-    day01.solve()
-    # day02.solve()
+    solve_day01()  # solution (1): 66186 (1.06 ms) | (2): 196804 (0.99 ms)
+    # solve_day02()
 
 
 # Press the green button in the gutter to run the script.
