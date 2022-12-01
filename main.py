@@ -1,4 +1,3 @@
-import day00.day00 as day_template
 import day01.day01 as day01
 import day02.day02 as day02
 
