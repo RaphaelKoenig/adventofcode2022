@@ -66,7 +66,7 @@ def solve_day01_2():
     # sort calories by elf descending
     calories_by_elf = sorted([x for x in calories_by_elf], reverse=True)
 
-    # result = get sum of top 3
+    # result = sum first 3 values
     result = (sum(calories_by_elf[:3]))
 
     # stop execution time
