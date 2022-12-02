@@ -1,38 +1,30 @@
+# template day
 import time
 
-day_str = "01"
+day_str = "03"
 
-def solve_day01():
-    solve_day01_1()
-    solve_day01_2()
+def solve_day03():
+    solve_day03_1()
+    solve_day03_2()
 
 
-def solve_day01_1():
-
+def solve_day03_1():
     # start execution time
     start_time = time.perf_counter()
 
     # read file using readlines()
     input_file = open('day' + day_str + '/input.txt', 'r')
     lines = input_file.readlines()
+    # print(lines)
 
     # remove \n and whitespaces
     lines = [x.replace("\n", "").strip() for x in lines]
+    # print(lines)
 
     # define variables
-    calories_by_elf = []
-    sum_calories = 0
 
-    # sum calories per elf
-    for line in lines:
-        if line == "":
-            calories_by_elf.append(sum_calories)
-            sum_calories = 0
-        else:
-            sum_calories += int(line)
-
-    # result = calories of elf with highest calories
-    result = (max(calories_by_elf))
+    # result
+    result = 0
 
     # stop execution time
     end_time = time.perf_counter()
@@ -40,7 +32,7 @@ def solve_day01_1():
     print('Day {} (1) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
 
 
-def solve_day01_2():
+def solve_day03_2():
 
     # start execution time
     start_time = time.perf_counter()
@@ -48,27 +40,16 @@ def solve_day01_2():
     # read file Using readlines()
     input_file = open('day' + day_str + '/input.txt', 'r')
     lines = input_file.readlines()
+    # print(lines)
 
     # remove \n and whitespaces
     lines = [x.replace("\n", "").strip() for x in lines]
+    # print(lines)
 
     # define variables
-    calories_by_elf = []
-    sum_calories = 0
 
-    # sum calories per elf
-    for line in lines:
-        if line == "":
-            calories_by_elf.append(sum_calories)
-            sum_calories = 0
-        else:
-            sum_calories += int(line)
-
-    # sort calories by elf descending
-    calories_by_elf = sorted([x for x in calories_by_elf], reverse=True)
-
-    # result = sum first 3 values
-    result = (sum(calories_by_elf[:3]))
+    # result
+    result = 0
 
     # stop execution time
     end_time = time.perf_counter()

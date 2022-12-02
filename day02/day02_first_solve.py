@@ -1,6 +1,7 @@
 #first_solved
 import time
 
+day_str = "02"
 
 def solve_day02():
     solve_day02_1()
@@ -48,7 +49,7 @@ def solve_day02_1():
     start_time = time.perf_counter()
 
     # read file Using readlines()
-    input_file = open('day02/input.txt', 'r')
+    input_file = open('day' + day_str + '/input.txt', 'r')
     lines = input_file.readlines()
     # print(lines)
 
@@ -71,7 +72,7 @@ def solve_day02_1():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day 2 (1) solution: {} (execution time: {} ms)'.format(result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
 
 
 def solve_day02_2():
@@ -104,7 +105,7 @@ def solve_day02_2():
     start_time = time.perf_counter()
 
     # read file Using readlines()
-    input_file = open('day02/input.txt', 'r')
+    input_file = open('day' + day_str + '/input.txt', 'r')
     lines = input_file.readlines()
     # print(lines)
 
@@ -127,4 +128,4 @@ def solve_day02_2():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day 2 (2) solution: {} (execution time: {} ms)'.format(result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
