@@ -77,7 +77,6 @@ def solve_day02_1():
 
 def solve_day02_2():
 
-
     def calculate_points_of_game(me, opponent):
         points_me = 0
         if me == "X":

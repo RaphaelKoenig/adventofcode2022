@@ -6,6 +6,8 @@ day_str = "02"
 def solve_day02():
     solve_day02_1()
     solve_day02_2()
+    # solve_day02_short()
+    # solve_day02_shortest()
 
 
 # day02_1
@@ -30,33 +32,6 @@ def solve_day02():
 
 def solve_day02_1():
 
-    # calculate score of game for player2 (me)
-    def calculate_score_of_game(player1_shape, player2_shape):
-
-        score_player2 = 0
-
-        # calculate score of Rock = 1, Paper = 2, Scissors = 3
-        if player2_shape == "X":
-            score_player2 += 1
-        elif player2_shape == "Y":
-            score_player2 += 2
-        elif player2_shape == "Z":
-            score_player2 += 3
-        else:
-            raise RuntimeError('Score calculation Rock/Paper/Scissors failed')
-
-        # calculate score of Loss = 0, Draw = 3, Win = 6
-        if player1_shape == "A" and player2_shape == "Z" or player1_shape == "B" and player2_shape == "X" or player1_shape == "C" and player2_shape == "Y":
-            score_player2 += 0
-        elif player1_shape == "A" and player2_shape == "X" or player1_shape == "B" and player2_shape == "Y" or player1_shape == "C" and player2_shape == "Z":
-            score_player2 += 3
-        elif player1_shape == "A" and player2_shape == "Y" or player1_shape == "B" and player2_shape == "Z" or player1_shape == "C" and player2_shape == "X":
-            score_player2 += 6
-        else:
-            raise RuntimeError('Score calculation Loss/Draw/Win failed')
-
-        return score_player2
-
     # start execution time
     start_time = time.perf_counter()
 
@@ -68,15 +43,16 @@ def solve_day02_1():
     games = [x.replace("\n", "").strip() for x in lines]
 
     # define variables
-    score_player2_all_games = 0
+    game_scores = {"A X": 1 + 3, "A Y": 2 + 6, "A Z": 3 + 0,
+                   "B X": 1 + 0, "B Y": 2 + 3, "B Z": 3 + 6,
+                   "C X": 1 + 6, "C Y": 2 + 0, "C Z": 3 + 3}
+    total_score = 0
 
     for game in games:
-        player1_shape, player2_shape = game.split(" ")
-        score_player2 = calculate_score_of_game(player1_shape, player2_shape)
-        score_player2_all_games += score_player2
+        total_score += game_scores[game]
 
     # result = sum scores of all games for player2 (me)
-    result = score_player2_all_games
+    result = total_score
 
     # stop execution time
     end_time = time.perf_counter()
@@ -86,29 +62,6 @@ def solve_day02_1():
 
 def solve_day02_2():
 
-    # calculate score of game for player2 (me)
-    def calculate_score_of_game(player1_shape, outcome):
-        score_player2 = 0
-        if outcome == "X":
-            score_player2 += 0
-        elif outcome == "Y":
-            score_player2 += 3
-        elif outcome == "Z":
-            score_player2 += 6
-        else:
-            raise RuntimeError('Score calculation Loss/Draw/Win failed')
-
-        if (player1_shape == "A" and outcome == "Y") or (player1_shape == "B" and outcome == "X") or (player1_shape == "C" and outcome == "Z"):
-            score_player2 += 1
-        elif (player1_shape == "A" and outcome == "Z") or (player1_shape == "B" and outcome == "Y") or (player1_shape == "C" and outcome == "X"):
-            score_player2 += 2
-        elif (player1_shape == "A" and outcome == "X") or (player1_shape == "B" and outcome == "Z") or (player1_shape == "C" and outcome == "Y"):
-            score_player2 += 3
-        else:
-            raise RuntimeError('Score calculation Rock/Paper/Scissors failed')
-
-        return score_player2
-
     # start execution time
     start_time = time.perf_counter()
 
@@ -120,18 +73,39 @@ def solve_day02_2():
     games = [x.replace("\n", "").strip() for x in lines]
 
     # define variables
-    score_player2_all_games = 0
+    game_scores = {"A X": 3 + 0, "A Y": 1 + 3, "A Z": 2 + 6,
+                   "B X": 1 + 0, "B Y": 2 + 3, "B Z": 3 + 6,
+                   "C X": 2 + 0, "C Y": 3 + 3, "C Z": 1 + 6}
+    total_score = 0
 
     # sum scores for every game (player2/me)
     for game in games:
-        player1_shape, outcome = game.split(" ")
-        score_player2 = calculate_score_of_game(player1_shape, outcome)
-        score_player2_all_games += score_player2
+        total_score += game_scores[game]
 
     # result = sum scores of all games for player2 (me)
-    result = score_player2_all_games
+    result = total_score
 
     # stop execution time
     end_time = time.perf_counter()
 
     print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+
+
+def solve_day02_short():
+
+    games = [x.replace("\n", "") for x in open('day02/input.txt', 'r').readlines()]
+    game_scores_1 = {"A X": 1 + 3, "A Y": 2 + 6, "A Z": 3 + 0, "B X": 1 + 0, "B Y": 2 + 3, "B Z": 3 + 6, "C X": 1 + 6, "C Y": 2 + 0, "C Z": 3 + 3}
+    game_scores_2 = {"A X": 3 + 0, "A Y": 1 + 3, "A Z": 2 + 6, "B X": 1 + 0, "B Y": 2 + 3, "B Z": 3 + 6, "C X": 2 + 0, "C Y": 3 + 3, "C Z": 1 + 6}
+    result_1 = sum([game_scores_1[x] for x in games])
+    result_2 = sum([game_scores_2[x] for x in games])
+
+    print(result_1, result_2)
+
+
+def solve_day02_shortest():
+
+    game_scores_1 = {"A X": 4, "A Y": 8, "A Z": 3, "B X": 1, "B Y": 5, "B Z": 9, "C X": 7, "C Y": 2, "C Z": 6}
+    game_scores_2 = {"A X": 3, "A Y": 4, "A Z": 8, "B X": 1, "B Y": 5, "B Z": 9, "C X": 2, "C Y": 6, "C Z": 7}
+    print(sum([game_scores_1[x] for x in [x.replace("\n", "") for x in open('day02/input.txt', 'r').readlines()]]))
+    print(sum([game_scores_2[x] for x in [x.replace("\n", "") for x in open('day02/input.txt', 'r').readlines()]]))
+
