@@ -69,13 +69,13 @@ def solve_day03_2():
     priority_sum = 0
     for index, rucksack in enumerate(lines):
         if index % 3 == 0:
-            compartment_1_set = set(rucksack)
+            rucksack_1_set = set(rucksack)
         elif index % 3 == 1:
-            compartment_2_set = set(rucksack)
+            rucksack_2_set = set(rucksack)
         elif index % 3 == 2:
-            compartment_3_set = set(rucksack)
-            intersection = compartment_1_set & compartment_2_set & compartment_3_set
-            # compartment_1_set.intersection(compartment_2_set).intersection(compartment_3_set)
+            rucksack_3_set = set(rucksack)
+            intersection = rucksack_1_set & rucksack_2_set & rucksack_3_set
+            # rucksack_1_set.intersection(rucksack_2_set).intersection(rucksack_3_set)
             for character in intersection:
                 priority_sum += get_priority(character)
         else:
@@ -110,12 +110,12 @@ def solve_day03_2_short():
     result = 0
     for index, rucksack in enumerate([x.strip() for x in open('day' + day_str + '/input.txt').readlines()]):
         if index % 3 == 0:
-            set_compartment_1 = set(rucksack)
+            set_rucksack_1 = set(rucksack)
         elif index % 3 == 1:
-            set_compartment_2 = set(rucksack)
+            set_rucksack_2 = set(rucksack)
         else:
-            set_compartment_3 = set(rucksack)
-            intersection = set_compartment_1 & set_compartment_2 & set_compartment_3
+            set_rucksack_3 = set(rucksack)
+            intersection = set_rucksack_1 & set_rucksack_2 & set_rucksack_3
 
             result += p(next(iter(set(intersection))))
     print(result)
