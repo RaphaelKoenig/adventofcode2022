@@ -2,6 +2,7 @@ import time
 
 day_str = "01"
 
+
 def solve_day01():
     solve_day01_1()
     solve_day01_2()
@@ -13,11 +14,11 @@ def solve_day01_1():
     start_time = time.perf_counter()
 
     # read file using readlines()
-    input_file = open('day' + day_str + '/input.txt', 'r')
+    input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
-    lines = [x.replace("\n", "").strip() for x in lines]
+    lines = [x.strip() for x in lines]
 
     # define variables
     calories_by_elf = []
@@ -46,7 +47,7 @@ def solve_day01_2():
     start_time = time.perf_counter()
 
     # read file Using readlines()
-    input_file = open('day' + day_str + '/input.txt', 'r')
+    input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
