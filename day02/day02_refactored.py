@@ -3,6 +3,7 @@ import time
 
 day_str = "02"
 
+
 def solve_day02():
     solve_day02_1()
     solve_day02_2()

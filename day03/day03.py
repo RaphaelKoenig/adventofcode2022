@@ -7,6 +7,8 @@ day_str = "03"
 def solve_day03():
     solve_day03_1()
     solve_day03_2()
+    # solve_day03_1_short()
+    # solve_day03_2_short()
 
 
 # get priority from input letter: a = 1, b = 2 ... z = 26, A = 27, B = 28 ... Z = 52
@@ -36,7 +38,7 @@ def solve_day03_1():
 
         compartment_1_set = set(rucksack[:split_int])
         compartment_2_set = set(rucksack[-split_int:])
-        intersection = compartment_1_set.intersection(compartment_2_set)
+        intersection = compartment_1_set & compartment_2_set
 
         for character in intersection:
             priority_sum += get_priority(character)
@@ -70,11 +72,14 @@ def solve_day03_2():
             compartment_1_set = set(rucksack)
         elif index % 3 == 1:
             compartment_2_set = set(rucksack)
-        else:
+        elif index % 3 == 2:
             compartment_3_set = set(rucksack)
-            intersection = compartment_1_set.intersection(compartment_2_set).intersection(compartment_3_set)
+            intersection = compartment_1_set & compartment_2_set & compartment_3_set
+            # compartment_1_set.intersection(compartment_2_set).intersection(compartment_3_set)
             for character in intersection:
                 priority_sum += get_priority(character)
+        else:
+            raise RuntimeError('something is very wrong')
 
     # result
     result = priority_sum
@@ -97,7 +102,7 @@ def p(c):
 
 # split every rucksack in 2 same size compartments and intersect them to find item that appears in both
 def solve_day03_1_short():
-    print(sum(p(next(iter(set(r[:int(len(r)/2)]).intersection(set(r[-int(len(r)/2):]))))) for r in [x.strip() for x in open('day' + day_str + '/input.txt').readlines()]))
+    print(sum(p(next(iter(set(r[:int(len(r)/2)]) & set(r[-int(len(r)/2):])))) for r in [x.strip() for x in open('day' + day_str + '/input.txt').readlines()]))
 
 
 def solve_day03_2_short():
@@ -110,7 +115,7 @@ def solve_day03_2_short():
             set_compartment_2 = set(rucksack)
         else:
             set_compartment_3 = set(rucksack)
-            intersection = set_compartment_1.intersection(set_compartment_2).intersection(set_compartment_3)
+            intersection = set_compartment_1 & set_compartment_2 & set_compartment_3
 
             result += p(next(iter(set(intersection))))
     print(result)
