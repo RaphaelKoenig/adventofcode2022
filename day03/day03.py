@@ -21,7 +21,7 @@ def solve_day03_1():
     start_time = time.perf_counter()
 
     # read file using readlines()
-    input_file = open('day' + day_str + '/input.txt', 'r')
+    input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
@@ -57,7 +57,7 @@ def solve_day03_2():
     start_time = time.perf_counter()
 
     # read file using readlines()
-    input_file = open('day' + day_str + '/input.txt', 'r')
+    input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces

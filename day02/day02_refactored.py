@@ -61,11 +61,11 @@ def solve_day02_1():
     start_time = time.perf_counter()
 
     # read file using readlines()
-    input_file = open('day' + day_str + '/input.txt', 'r')
+    input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
-    games = [x.replace("\n", "").strip() for x in lines]
+    games = [x.strip() for x in lines]
 
     # define variables
     score_player2_all_games = 0
@@ -113,11 +113,11 @@ def solve_day02_2():
     start_time = time.perf_counter()
 
     # read file using readlines()
-    input_file = open('day' + day_str + '/input.txt', 'r')
+    input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
-    games = [x.replace("\n", "").strip() for x in lines]
+    games = [x.strip() for x in lines]
 
     # define variables
     score_player2_all_games = 0

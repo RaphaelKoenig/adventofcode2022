@@ -51,7 +51,7 @@ def solve_day01_2():
     lines = input_file.readlines()
 
     # remove \n and whitespaces
-    lines = [x.replace("\n", "").strip() for x in lines]
+    lines = [x.strip() for x in lines]
 
     # define variables
     calories_by_elf = []
