@@ -11,12 +11,6 @@ def solve_day03():
     # solve_day03_2_short()
 
 
-# get priority from input letter: a = 1, b = 2 ... z = 26, A = 27, B = 28 ... Z = 52
-def get_priority(character):
-    priority = ord(character) - 38 if ord(character) < 97 else ord(character) - 97
-    return priority
-
-
 def solve_day03_1():
 
     # start execution time
@@ -89,6 +83,12 @@ def solve_day03_2():
 
     print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result,
                                                                    round((end_time - start_time) * 1000, 2)))
+
+
+# get priority from input letter: a = 1, b = 2 ... z = 26, A = 27, B = 28 ... Z = 52
+def get_priority(character):
+    priority = ord(character) - 38 if ord(character) < 97 else ord(character) - 97
+    return priority
 
 
 # r = rucksack
