@@ -36,7 +36,7 @@ def solve_day02_1():
     # start execution time
     start_time = time.perf_counter()
 
-    # read file using readlines()
+    # read input file
     input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
@@ -66,7 +66,7 @@ def solve_day02_2():
     # start execution time
     start_time = time.perf_counter()
 
-    # read file using readlines()
+    # read input file
     input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
@@ -109,4 +109,3 @@ def solve_day02_shortest():
     game_scores_2 = {"A X": 3, "A Y": 4, "A Z": 8, "B X": 1, "B Y": 5, "B Z": 9, "C X": 2, "C Y": 6, "C Z": 7}
     print(sum([game_scores_1[x] for x in [x.strip() for x in open('day02/input.txt').readlines()]]))
     print(sum([game_scores_2[x] for x in [x.strip() for x in open('day02/input.txt').readlines()]]))
-

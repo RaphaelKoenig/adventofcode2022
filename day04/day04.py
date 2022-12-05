@@ -14,7 +14,7 @@ def solve_day04_1():
     # start execution time
     start_time = time.perf_counter()
 
-    # read file using readlines()
+    # read input file
     input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
@@ -44,7 +44,7 @@ def solve_day04_2():
     # start execution time
     start_time = time.perf_counter()
 
-    # read file using readlines()
+    # read input file
     input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 

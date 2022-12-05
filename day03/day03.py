@@ -16,7 +16,7 @@ def solve_day03_1():
     # start execution time
     start_time = time.perf_counter()
 
-    # read file using readlines()
+    # read input file
     input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
@@ -37,7 +37,6 @@ def solve_day03_1():
         for character in intersection:
             priority_sum += get_priority(character)
 
-
     # result
     result = priority_sum
 
@@ -52,7 +51,7 @@ def solve_day03_2():
     # start execution time
     start_time = time.perf_counter()
 
-    # read file using readlines()
+    # read input file
     input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
@@ -119,4 +118,3 @@ def solve_day03_2_short():
 
             result += p(next(iter(set(intersection))))
     print(result)
-
