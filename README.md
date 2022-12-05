@@ -22,33 +22,41 @@ Python solutions of Advent of Code 2022
   </tr>
   <tr>
     <td><a href="https://adventofcode.com/2022/day/1">Day 1</a></td>
-    <td>66186</td>
+    <td align="right">66 186</td>
     <td>1.06 ms</td>
-    <td>196804</td>
+    <td align="right">196 804</td>
     <td>0.99 ms</td>    
   </tr>
   
    <tr>
     <td><a href="https://adventofcode.com/2022/day/2">Day 2</a></td>
-    <td>14264</td>
+    <td align="right">14 264</td>
     <td>0.85 ms</td>
-    <td>12382</td>
+    <td align="right">12 382</td>
     <td>0.85 ms</td>    
   </tr>
   
    <tr>
     <td><a href="https://adventofcode.com/2022/day/3">Day 3</a></td>
-    <td>8394</td>
+    <td align="right">8 394</td>
     <td>0.92 ms</td>
-    <td>2413</td>
+    <td align="right">2 413</td>
     <td>0.72 ms</td>    
   </tr>
   
    <tr>
     <td><a href="https://adventofcode.com/2022/day/4">Day 4</a></td>
-    <td>567</td>
+    <td align="right">567</td>
     <td>2.01 ms</td>
-    <td>907</td>
+    <td align="right">907</td>
     <td>2.62 ms</td>    
+  </tr>
+
+  <tr>
+    <td><a href="https://adventofcode.com/2022/day/5">Day 5</a></td>
+    <td align="right">FCVRLMVQP</td>
+    <td>2,04 ms</td>
+    <td align="right">RWLWGJGFD</td>
+    <td>2,08 ms</td>    
   </tr>
 </table>
