@@ -55,8 +55,8 @@ Python solutions of Advent of Code 2022
   <tr>
     <td><a href="https://adventofcode.com/2022/day/5">Day 5</a></td>
     <td align="right">FCVRLMVQP</td>
-    <td>2,04 ms</td>
+    <td>2.04 ms</td>
     <td align="right">RWLWGJGFD</td>
-    <td>2,08 ms</td>    
+    <td>2.08 ms</td>    
   </tr>
 </table>
