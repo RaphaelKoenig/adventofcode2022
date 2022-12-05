@@ -16,7 +16,7 @@ def solve_day05_1():
     # start execution time
     start_time = time.perf_counter()
 
-    # read file using readlines()
+    # read input file
     input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
@@ -37,7 +37,7 @@ def solve_day05_1():
     # fill stacks
     stacks = fill_stacks(stacks_unstructured)
 
-    #do we move the items individually or in bulk? (part 2)
+    # do we move the items individually or in bulk? (part 2)
     bulk = False
 
     # solve: move items between stacks
@@ -48,8 +48,8 @@ def solve_day05_1():
     for stack in stacks:
         top_of_each_stack += stack.pop()
 
-        # result
-        result = top_of_each_stack
+    # result
+    result = top_of_each_stack
 
     # stop execution time
     end_time = time.perf_counter()
@@ -58,10 +58,11 @@ def solve_day05_1():
 
 
 def solve_day05_2():
+
     # start execution time
     start_time = time.perf_counter()
 
-    # read file using readlines()
+    # read input file
     input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
 
@@ -93,8 +94,8 @@ def solve_day05_2():
     for stack in stacks:
         top_of_each_stack += stack.pop()
 
-        # result
-        result = top_of_each_stack
+    # result
+    result = top_of_each_stack
 
     # stop execution time
     end_time = time.perf_counter()
@@ -131,7 +132,7 @@ def fill_stacks(stacks_unstructured):
     stacks_str = stacks_unstructured[:-1]
 
     # add empty stacks to stacks
-    for i in (range(number_of_stacks)):
+    for _ in (range(number_of_stacks)):
         stacks.append(deque())
 
     # fill stacks
@@ -146,7 +147,6 @@ def fill_stacks(stacks_unstructured):
 def move_stack(move_str, stacks, bulk):
 
     count_int, from_int, to_int = get_ints_from_move(move_str)
-
 
     if bulk:
         right_order = deque()
