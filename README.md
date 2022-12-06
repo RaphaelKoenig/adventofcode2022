@@ -60,4 +60,13 @@ Python solutions of Advent of Code 2022
     <td align="right">RWLWGJGFD</td>
     <td>2.08 ms</td>    
   </tr>
+
+  <tr>
+    <td><a href="https://adventofcode.com/2022/day/6">Day 6</a></td>
+    <td align="right">1578</td>
+    <td>1.31 ms</td>
+    <td align="right">2178</td>
+    <td>0.43 ms</td>    
+  </tr>
+
 </table>
