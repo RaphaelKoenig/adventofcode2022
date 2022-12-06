@@ -101,9 +101,10 @@ def calculate_spm_index_optimized(characters, spm_length):
 def calculate_spm_index_optimized_time_complexity(characters, spm_length):
 
     # define alphabet dict
+    unique_characters = set(characters)
     dict_alphabet = {}
-    for character in string.ascii_lowercase:
-        dict_alphabet.update({character: 0})
+    for character in unique_characters:
+        dict_alphabet.update({str(character): 0})
 
     # define counter of duplicates
     duplicates = 0
@@ -117,7 +118,7 @@ def calculate_spm_index_optimized_time_complexity(characters, spm_length):
     # now always add new character and delete oldest one till duplicates == 0
     for index, character in enumerate(characters[spm_length:]):
 
-        #remove oldest character
+        # remove oldest character
         dict_alphabet[characters[index]] -= 1
         # update duplicates
         if dict_alphabet[characters[index]] >= 1:
