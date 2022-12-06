@@ -12,7 +12,6 @@ def solve_day05():
 
 
 def solve_day05_1():
-
     # start execution time
     start_time = time.perf_counter()
 
@@ -28,16 +27,11 @@ def solve_day05_1():
     # results of the items on top of each stack
     top_of_each_stack = ""
 
-    # stacks_unstructured:  used to import the stacks, list of stacks with number of stacks at the end
-    # moves:                list of moves(Strings)
-    # fill stacks_stacks_unstructured and moves
-    stacks_unstructured, moves = split_input_data(lines)
+    # moves:  list of moves(Strings)
+    # stacks: list of stacks
+    stacks, moves = parse_input(lines)
 
-    # stacks:               list of stacks
-    # fill stacks
-    stacks = fill_stacks(stacks_unstructured)
-
-    # do we move the items individually or in bulk? (part 2)
+    # do we move the items individually or in bulk? (part 1 = False) (part 2 = True)
     bulk = False
 
     # solve: move items between stacks
@@ -74,16 +68,11 @@ def solve_day05_2():
     # results of the items on top of each stack
     top_of_each_stack = ""
 
-    # stacks_unstructured:  used to import the stacks, list of stacks with number of stacks at the end
-    # moves:                list of moves(Strings)
-    # fill stacks_stacks_unstructured and moves
-    stacks_unstructured, moves = split_input_data(lines)
+    # moves:  list of moves(Strings)
+    # stacks: list of stacks
+    stacks, moves = parse_input(lines)
 
-    # stacks:               list of stacks
-    # fill stacks
-    stacks = fill_stacks(stacks_unstructured)
-
-    # do we move the items individually or in bulk? (part 2)
+    # do we move the items individually or in bulk? (part 1 = False) (part 2 = True)
     bulk = True
 
     # solve: move items between stacks
@@ -101,6 +90,18 @@ def solve_day05_2():
     end_time = time.perf_counter()
 
     print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+
+
+def parse_input(lines):
+
+    # stacks_unstructured:  used to import the stacks, list of stacks with number of stacks at the end
+    # moves:                list of moves(Strings)
+    # fill stacks_stacks_unstructured and moves
+    stacks_unstructured, moves = split_input_data(lines)
+
+    # fill stacks
+    stacks = fill_stacks(stacks_unstructured)
+    return stacks, moves
 
 
 def split_input_data(lines):
@@ -139,7 +140,7 @@ def fill_stacks(stacks_unstructured):
     for line in stacks_str:
         for index, character in enumerate(line):
             if index % 4 == 1:
-                if character != ' ':
+                if character.isalpha():
                     stacks[index // 4].appendleft(character)
     return stacks
 
