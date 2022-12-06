@@ -1,5 +1,5 @@
-# template day
 import time
+import string
 
 day_str = "06"
 
@@ -28,11 +28,6 @@ def solve_day06_1():
 
     # solve
     spm_index = calculate_spm_index(characters, spm_length)
-
-    for i in range(0, len(characters)-3):
-        if len(set(characters[i:i+4])) == 4:
-            start_of_paket_marker_index = i + 4
-            break
 
     # result
     result = spm_index
@@ -88,6 +83,7 @@ def calculate_spm_index(characters, spm_length):
 
 # (1) 1.31 ms -> 1.35 ms ( 101 loops skipped) 1575 -> 1474 ( 6% reduction of loops) but slower/same because of offset calculation
 # (2) 1.56 ms -> 0.43 ms (1782 loops skipped) 2165 ->  383 (82% reduction of loops)
+# Time complexity: O(len(characters)*spm_length)
 def calculate_spm_index_optimized(characters, spm_length):
 
     offset = 0
@@ -100,4 +96,39 @@ def calculate_spm_index_optimized(characters, spm_length):
         offset += spm_length - distinct_characters_length - 1
 
 
+# Use knowledge about limited alphabet
+# Time complexity: O(len(characters))
+def calculate_spm_index_optimized_time_complexity(characters, spm_length):
+
+    # define alphabet dict
+    dict_alphabet = {}
+    for character in string.ascii_lowercase:
+        dict_alphabet.update({character: 0})
+
+    # define counter of duplicates
+    duplicates = 0
+
+    # add the first spm_length characters to the dict and update duplicates
+    for character in characters[:spm_length]:
+        dict_alphabet[character] += 1
+        if dict_alphabet[character] >= 2:
+            duplicates += 1
+
+    # now always add new character and delete oldest one till duplicates == 0
+    for index, character in enumerate(characters[spm_length:]):
+
+        #remove oldest character
+        dict_alphabet[characters[index]] -= 1
+        # update duplicates
+        if dict_alphabet[characters[index]] >= 1:
+            duplicates -= 1
+
+        # add new character
+        dict_alphabet[character] += 1
+        # update duplicates
+        if dict_alphabet[character] >= 2:
+            duplicates += 1
+
+        if duplicates == 0:
+            return index + 1 + spm_length
 
