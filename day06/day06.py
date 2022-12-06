@@ -17,7 +17,6 @@ def solve_day06_1():
     # read input file
     input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
-    # print(lines)
 
     # remove \n and whitespaces
     lines = [x.strip() for x in lines]
@@ -51,7 +50,6 @@ def solve_day06_2():
     # read input file
     input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
-    # print(lines)
 
     # remove \n and whitespaces
     lines = [x.strip() for x in lines]
@@ -77,29 +75,29 @@ def solve_day06_2():
 def calculate_spm_index(characters, spm_length):
 
     for i in range(0, len(characters)-spm_length+1):
-        distinct_characters = len(set(characters[i:i+spm_length]))
-        if distinct_characters == spm_length:
+        distinct_characters_length = len(set(characters[i:i+spm_length]))
+        if distinct_characters_length == spm_length:
             spm_index = i + spm_length
             return spm_index
 
 
 # Use knowledge about the amount of distinct characters to skip loops
 # Example: spm_length = 14, distinct characters 10: Skip 3 loops
-# because there cannot be sequence of 14 distinct characters in the next 3 loops because it needs at least these 3 loops
+# because there cannot be sequence of 14 distinct characters in the next 8 loops because it needs at least these 8 loops
 # to remove the duplicates
 
-# (1) 1.31 -> 1.42 ms ( 101 loops skipped) 1575 -> 1474 ( 6% reduction of loops) but slower because of offset calculation
-# (2) 1.56 -> 0.43 ms (1782 loops skipped) 2165 ->  383 (82% reduction of loops)
+# (1) 1.31 ms -> 1.35 ms ( 101 loops skipped) 1575 -> 1474 ( 6% reduction of loops) but slower/same because of offset calculation
+# (2) 1.56 ms -> 0.43 ms (1782 loops skipped) 2165 ->  383 (82% reduction of loops)
 def calculate_spm_index_optimized(characters, spm_length):
 
     offset = 0
-    for i in range(0, len(characters)-spm_length+1):
+    for i in range(0, len(characters) - spm_length + 1):
         i += offset
-        distinct_characters = len(set(characters[i:i+spm_length]))
-        if distinct_characters == spm_length:
+        distinct_characters_length = len(set(characters[i:i + spm_length]))
+        if distinct_characters_length == spm_length:
             spm_index = i + spm_length
             return spm_index
-        offset += spm_length-distinct_characters-1
+        offset += spm_length - distinct_characters_length - 1
 
 
 
