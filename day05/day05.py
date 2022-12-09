@@ -1,4 +1,3 @@
-# template day
 import time
 from collections import deque
 import re
