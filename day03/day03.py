@@ -1,4 +1,3 @@
-# template day
 import time
 
 day_str = "03"
