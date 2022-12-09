@@ -73,7 +73,7 @@ Python solutions of Advent of Code 2022
   </tr>
 
   <tr>
-    <td><a href="https://adventofcode.com/2022/day/6">Day 6</a></td>
+    <td><a href="https://adventofcode.com/2022/day/7">Day 7</a></td>
     <td align="right">95437</td>
     <td>0.15 ms</td>
     <td align="right">24933642</td>
@@ -81,7 +81,7 @@ Python solutions of Advent of Code 2022
   </tr>
 
   <tr>
-    <td><a href="https://adventofcode.com/2022/day/6">Day 6</a></td>
+    <td><a href="https://adventofcode.com/2022/day/8">Day 8</a></td>
     <td align="right">1854</td>
     <td>6.58 ms</td>
     <td align="right">527340</td>
@@ -89,7 +89,7 @@ Python solutions of Advent of Code 2022
   </tr>
 
   <tr>
-    <td><a href="https://adventofcode.com/2022/day/6">Day 6</a></td>
+    <td><a href="https://adventofcode.com/2022/day/9">Day 9</a></td>
     <td align="right">6339</td>
     <td>20.04 ms</td>
     <td align="right">2541</td>
