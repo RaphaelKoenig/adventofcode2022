@@ -72,4 +72,28 @@ Python solutions of Advent of Code 2022
     <td>0.43 ms</td>    
   </tr>
 
+  <tr>
+    <td><a href="https://adventofcode.com/2022/day/6">Day 6</a></td>
+    <td align="right">95437</td>
+    <td>0.15 ms</td>
+    <td align="right">24933642</td>
+    <td>0.11 ms</td>    
+  </tr>
+
+  <tr>
+    <td><a href="https://adventofcode.com/2022/day/6">Day 6</a></td>
+    <td align="right">1854</td>
+    <td>6.58 ms</td>
+    <td align="right">527340</td>
+    <td>25.62 ms</td>    
+  </tr>
+
+  <tr>
+    <td><a href="https://adventofcode.com/2022/day/6">Day 6</a></td>
+    <td align="right">6339</td>
+    <td>20.04 ms</td>
+    <td align="right">2541</td>
+    <td>63.89 ms</td>    
+  </tr>
+
 </table>
