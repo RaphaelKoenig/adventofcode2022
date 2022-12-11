@@ -1,4 +1,4 @@
-import math
+import copy
 import time
 import numpy
 
@@ -6,10 +6,11 @@ day_str = "11"
 
 
 class Monkey(object):
+
     def __init__(self, id):
         self.id = id
         self.items = []
-        self.operation = ""
+        self.operation = lambda x: x
         self.test = 0
         self.true = 0
         self.false = 0
@@ -17,8 +18,8 @@ class Monkey(object):
 
     def __repr__(self):
         return "Monkey " + str(self.id) + "\n" \
-               + "  Items: " + str(self.items) + "\n" + "  Operation: " + str(self.operation) + "\n" \
-               + "  Test: divisible by " + str(self.test) + "\n" + "    If  true: throw to Monkey " + str(self.true)\
+               + "  Items: " + str(self.items) + "\n" + "  Operation: " + str(self.operation(2)) + "\n" \
+               + "  Test: divisible by " + str(self.test) + "\n" + "    If  true: throw to Monkey " + str(self.true) \
                + "\n" + "    If false: throw to Monkey " + str(self.false) + "\n" + "  Inspected items: " \
                + str(self.inspected_items)
 
@@ -37,11 +38,11 @@ class Monkey(object):
     def empty_items(self):
         self.items = []
 
-    def get_operation(self):
-        return self.operation
-
     def set_operation(self, operation):
         self.operation = operation
+
+    def get_operation(self):
+        return self.operation
 
     def get_test(self):
         return self.test
@@ -93,7 +94,6 @@ def solve_day11_1():
         # print("Round: " + str(round_))
 
         for monkey in monkeys:
-
             for index_item, item in enumerate(monkey.get_items()):
                 # print("  Monkey " + str(monkey.get_id()) + " inspects an item with worry level of " + str(item))
                 monkey.increase_inspected_items()
@@ -111,7 +111,8 @@ def solve_day11_1():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (1) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (1) solution: {} (execution time: {} ms)'.format(day_str, result,
+                                                                   round((end_time - start_time) * 1000, 2)))
 
 
 def solve_day11_2():
@@ -122,7 +123,6 @@ def solve_day11_2():
     # read input file
     input_file = open('day' + day_str + '/input.txt')
     lines = input_file.readlines()
-    # print(lines)
 
     # remove \n and whitespaces
     lines = [x.strip() for x in lines]
@@ -150,10 +150,12 @@ def solve_day11_2():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result,
+                                                                   round((end_time - start_time) * 1000, 2)))
 
 
 def parse_input(lines):
+
     monkeys = list()
     for line in lines:
         if "Monkey" in line:
@@ -163,20 +165,26 @@ def parse_input(lines):
             for item in starting_items:
                 monkey.add_item(item)
         elif "Operation: " in line:
-            operation = line[line.find("old")+4:]
+            operation = line[line.find("old") + 4:]
             if operation[2:] == "old":
-                operation = ("**", 2)
+                operation = lambda x: x * x
+            elif operation[0] == "*":
+                value = int(operation[2:])
+                operation = lambda x, y = value: x * y
+            elif operation[0] == "+":
+                value = int(operation[2:])
+                operation = lambda x, y = value: x + y
             else:
-                operation = (operation[0], int(operation[2:]))
+                raise RuntimeError('Unexpected symbol while parsing operation')
             monkey.set_operation(operation)
         elif "Test: " in line:
-            test = int(line[line.find("by")+3:])
+            test = int(line[line.find("by") + 3:])
             monkey.set_test(test)
         elif "true" in line:
-            true = int(line[line.find("monkey")+7:])
+            true = int(line[line.find("monkey") + 7:])
             monkey.set_true(true)
         elif "false" in line:
-            false = int(line[line.find("monkey")+7:])
+            false = int(line[line.find("monkey") + 7:])
             monkey.set_false(false)
         elif line == "":
             monkeys.append(monkey)
@@ -189,17 +197,11 @@ def parse_input(lines):
 def execute_operation(index_item, monkey):
 
     worry_level = monkey.get_items()[index_item]
-    worry_level_old = monkey.get_items()[index_item]
-    if monkey.get_operation()[0] == "**":
-        worry_level = worry_level * worry_level
-    elif monkey.get_operation()[0] == "*":
-        worry_level = worry_level * monkey.get_operation()[1]
-    elif monkey.get_operation()[0] == "+":
-        worry_level = worry_level + monkey.get_operation()[1]
-    else:
-        raise RuntimeError('Unexpected symbol while executing operation')
+    worry_level_old = worry_level
+    worry_level = monkey.get_operation()(worry_level)
     # print("    Worry level changes from " + str(worry_level_old) + " to " + str(worry_level)
-    #      + " (Operation: " + str(monkey.get_operation()) + ")")
+    #       + " (Operation: " + "str(monkey.get_operation())" + ")")
+
     worry_level = worry_level // 3
     monkey.update_item(worry_level, index_item)
     # print("    Monkey gets bored with item. Worry level is divided by 3 to  " + str(worry_level))
@@ -207,15 +209,7 @@ def execute_operation(index_item, monkey):
 
 def execute_operation_part2(index_item, monkey, lcm):
 
-    worry_level = monkey.get_items()[index_item]
-    if monkey.get_operation()[0] == "**":
-        worry_level = worry_level * worry_level
-    elif monkey.get_operation()[0] == "*":
-        worry_level = worry_level * monkey.get_operation()[1]
-    elif monkey.get_operation()[0] == "+":
-        worry_level = worry_level + monkey.get_operation()[1]
-    else:
-        raise RuntimeError('Unexpected symbol while executing operation')
+    worry_level = monkey.get_operation()(monkey.get_items()[index_item])
     worry_level = worry_level % lcm
     monkey.update_item(worry_level, index_item)
 
