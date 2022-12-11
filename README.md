@@ -16,6 +16,7 @@ Python solutions of Advent of Code 2022
 | [Day 8](https://adventofcode.com/2022/day/8) | ⭐ | ⭐ |
 | [Day 9](https://adventofcode.com/2022/day/9) | ⭐ | ⭐ |
 | [Day 10](https://adventofcode.com/2022/day/10) | ⭐ | ⭐ |
+| [Day 11](https://adventofcode.com/2022/day/11) | ⭐ | ⭐ |
 <!--- advent_readme_stars table --->
 
 #### Solutions and Execution times
