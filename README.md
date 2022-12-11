@@ -29,73 +29,89 @@ Python solutions of Advent of Code 2022
   <tr>
     <td><a href="https://adventofcode.com/2022/day/1">Day 1</a></td>
     <td align="right">66 186</td>
-    <td>1.06 ms</td>
+    <td align="right">1.06 ms</td>
     <td align="right">196 804</td>
-    <td>0.99 ms</td>    
+    <td align="right">0.99 ms</td>    
   </tr>
   
    <tr>
     <td><a href="https://adventofcode.com/2022/day/2">Day 2</a></td>
     <td align="right">14 264</td>
-    <td>0.85 ms</td>
+    <td align="right">0.85 ms</td>
     <td align="right">12 382</td>
-    <td>0.85 ms</td>    
+    <td align="right">0.85 ms</td>    
   </tr>
   
    <tr>
     <td><a href="https://adventofcode.com/2022/day/3">Day 3</a></td>
     <td align="right">8 394</td>
-    <td>0.92 ms</td>
+    <td align="right">0.92 ms</td>
     <td align="right">2 413</td>
-    <td>0.72 ms</td>    
+    <td align="right">0.72 ms</td>    
   </tr>
   
    <tr>
     <td><a href="https://adventofcode.com/2022/day/4">Day 4</a></td>
     <td align="right">567</td>
-    <td>2.01 ms</td>
+    <td align="right">2.01 ms</td>
     <td align="right">907</td>
-    <td>2.62 ms</td>    
+    <td align="right">2.62 ms</td>    
   </tr>
 
   <tr>
     <td><a href="https://adventofcode.com/2022/day/5">Day 5</a></td>
     <td align="right">FCVRLMVQP</td>
-    <td>2.04 ms</td>
+    <td align="right">2.04 ms</td>
     <td align="right">RWLWGJGFD</td>
-    <td>2.08 ms</td>    
+    <td align="right">2.08 ms</td>    
   </tr>
 
   <tr>
     <td><a href="https://adventofcode.com/2022/day/6">Day 6</a></td>
-    <td align="right">1578</td>
-    <td>1.31 ms</td>
-    <td align="right">2178</td>
-    <td>0.43 ms</td>    
+    <td align="right">1 578</td>
+    <td align="right">1.31 ms</td>
+    <td align="right">2 178</td>
+    <td align="right">0.43 ms</td>    
   </tr>
 
   <tr>
     <td><a href="https://adventofcode.com/2022/day/7">Day 7</a></td>
-    <td align="right">95437</td>
-    <td>0.15 ms</td>
-    <td align="right">24933642</td>
-    <td>0.11 ms</td>    
+    <td align="right">95 437</td>
+    <td align="right">0.15 ms</td>
+    <td align="right">24 933 642</td>
+    <td align="right">0.11 ms</td>    
   </tr>
 
   <tr>
     <td><a href="https://adventofcode.com/2022/day/8">Day 8</a></td>
-    <td align="right">1854</td>
-    <td>6.58 ms</td>
-    <td align="right">527340</td>
-    <td>25.62 ms</td>    
+    <td align="right">1 854</td>
+    <td align="right">6.58 ms</td>
+    <td align="right">527 340</td>
+    <td align="right">25.62 ms</td>    
   </tr>
 
   <tr>
     <td><a href="https://adventofcode.com/2022/day/9">Day 9</a></td>
-    <td align="right">6339</td>
-    <td>20.04 ms</td>
-    <td align="right">2541</td>
-    <td>63.89 ms</td>    
+    <td align="right">6 339</td>
+    <td align="right">20.04 ms</td>
+    <td align="right">2 541</td>
+    <td align="right">63.89 ms</td>    
+  </tr>
+
+  <tr>
+    <td><a href="https://adventofcode.com/2022/day/10">Day 10</a></td>
+    <td align="right">11 220</td>
+    <td align="right">0.23 ms</td>
+    <td align="right">BZPAJELK</td>
+    <td align="right">0.72 ms</td>    
+  </tr>
+
+  <tr>
+    <td><a href="https://adventofcode.com/2022/day/11">Day 11</a></td>
+    <td align="right">113 232</td>
+    <td align="right">2.32 ms</td>
+    <td align="right">29 703 395 016</td>
+    <td align="right">1 124.62 ms</td>    
   </tr>
 
 </table>
