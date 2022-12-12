@@ -4,6 +4,12 @@ import numpy
 DAY_STR = "11"
 
 
+def solve_day11():
+
+    solve_day11_1()
+    solve_day11_2()
+
+
 class Monkey(object):
 
     def __init__(self, id):
@@ -66,12 +72,6 @@ class Monkey(object):
 
     def get_inspected_items(self):
         return self.inspected_items
-
-
-def solve_day11():
-
-    solve_day11_1()
-    solve_day11_2()
 
 
 def solve_day11_1():
