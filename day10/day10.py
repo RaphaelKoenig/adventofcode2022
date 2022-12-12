@@ -4,6 +4,7 @@ DAY_STR = "10"
 
 
 def solve_day10():
+
     solve_day10_1()
     solve_day10_2()
 
