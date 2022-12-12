@@ -1,10 +1,11 @@
 # refactored version
 import time
 
-day_str = "04"
+DAY_STR = "04"
 
 
 def solve_day04():
+
     solve_day04_1()
     solve_day04_2()
 
@@ -15,7 +16,7 @@ def solve_day04_1():
     start_time = time.perf_counter()
 
     # read input file
-    input_file = open('day' + day_str + '/input.txt')
+    input_file = open('day' + DAY_STR + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
@@ -36,7 +37,7 @@ def solve_day04_1():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (1) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (1) solution: {} (execution time: {} ms)'.format(DAY_STR, result, round((end_time - start_time) * 1000, 2)))
 
 
 def solve_day04_2():
@@ -45,7 +46,7 @@ def solve_day04_2():
     start_time = time.perf_counter()
 
     # read input file
-    input_file = open('day' + day_str + '/input.txt')
+    input_file = open('day' + DAY_STR + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
@@ -70,16 +71,18 @@ def solve_day04_2():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (2) solution: {} (execution time: {} ms)'.format(DAY_STR, result, round((end_time - start_time) * 1000, 2)))
 
 
 def assignments_to_int(a1, a2):
+
     a11, a12 = map(int, a1.split("-"))
     a21, a22 = map(int, a2.split("-"))
     return a11, a12, a21, a22
 
 
 def is_assignment_pair(a1, a2):
+
     a11, a12, a21, a22 = assignments_to_int(a1, a2)
     if (
             int(a11) <= int(a21) and int(a12) >= int(a22) or
@@ -90,6 +93,7 @@ def is_assignment_pair(a1, a2):
 
 
 def does_assignment_pair_overlap(a1, a2):
+
     a11, a12, a21, a22 = assignments_to_int(a1, a2)
     if(
             int(a11) >= int(a21) >= int(a11) or int(a11) <= int(a21) <= int(a12) or
