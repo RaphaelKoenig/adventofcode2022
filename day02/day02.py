@@ -1,10 +1,11 @@
 # refactored version
 import time
 
-day_str = "02"
+DAY_STR = "02"
 
 
 def solve_day02():
+
     solve_day02_1()
     solve_day02_2()
     # solve_day02_short()
@@ -37,7 +38,7 @@ def solve_day02_1():
     start_time = time.perf_counter()
 
     # read input file
-    input_file = open('day' + day_str + '/input.txt')
+    input_file = open('day' + DAY_STR + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
@@ -58,7 +59,7 @@ def solve_day02_1():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (1) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (1) solution: {} (execution time: {} ms)'.format(DAY_STR, result, round((end_time - start_time) * 1000, 2)))
 
 
 def solve_day02_2():
@@ -67,7 +68,7 @@ def solve_day02_2():
     start_time = time.perf_counter()
 
     # read input file
-    input_file = open('day' + day_str + '/input.txt')
+    input_file = open('day' + DAY_STR + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
@@ -89,7 +90,7 @@ def solve_day02_2():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (2) solution: {} (execution time: {} ms)'.format(DAY_STR, result, round((end_time - start_time) * 1000, 2)))
 
 
 def solve_day02_short():
