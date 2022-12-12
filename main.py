@@ -21,10 +21,10 @@ def solve_all():
     solve_day06()  # solution (1):      1578 ( 1.31 ms) | (2):        2178 (   0.43 ms) # (2)  optimized from 1.56 ms
     solve_day07()  # solution (1):     95437 ( 0.15 ms) | (2):    24933642 (   0.11 ms)
     solve_day08()  # solution (1):      1854 ( 6.58 ms) | (2):      527340 (  25.62 ms)
-    solve_day09()  # solution (1):      6339 (20.04 ms) | (2):        2541 (  63.89 ms) # optimized from 70/321ms
+    solve_day09()  # solution (1):      6339 (20.04 ms) | (2):        2541 (  63.89 ms) # optimized from 70ms | 321ms
     solve_day10()  # solution (1):     11220 ( 0.23 ms) | (2):    BZPAJELK (   0.72 ms)
     solve_day11()  # solution (1):    113232 ( 2.32 ms) | (2): 29703395016 (1124.62 ms) # (2) optimized from 1.4s
-    solve_day12()  # solution (1):    370    (15.21 ms) | (2):         363 (  26.39 ms) # (2) optimized from 786 ms
+    solve_day12()  # solution (1):    370    (11.83 ms) | (2):         363 (  11.11 ms) # (2) optimized from 786 ms
 
 
 if __name__ == '__main__':
