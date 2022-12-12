@@ -1,4 +1,3 @@
-import copy
 import time
 import numpy
 
@@ -81,7 +80,7 @@ def solve_day11_1():
     start_time = time.perf_counter()
 
     # read input file
-    input_file = open('day' + day_str + '/input.txt')
+    input_file = open('day' + DAY_STR + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
@@ -111,7 +110,7 @@ def solve_day11_1():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (1) solution: {} (execution time: {} ms)'.format(day_str, result,
+    print('Day {} (1) solution: {} (execution time: {} ms)'.format(DAY_STR, result,
                                                                    round((end_time - start_time) * 1000, 2)))
 
 
@@ -121,7 +120,7 @@ def solve_day11_2():
     start_time = time.perf_counter()
 
     # read input file
-    input_file = open('day' + day_str + '/input.txt')
+    input_file = open('day' + DAY_STR + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
@@ -150,7 +149,7 @@ def solve_day11_2():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result,
+    print('Day {} (2) solution: {} (execution time: {} ms)'.format(DAY_STR, result,
                                                                    round((end_time - start_time) * 1000, 2)))
 
 
