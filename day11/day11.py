@@ -2,7 +2,7 @@ import copy
 import time
 import numpy
 
-day_str = "11"
+DAY_STR = "11"
 
 
 class Monkey(object):
