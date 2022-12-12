@@ -1,10 +1,10 @@
 import time
-import string
 
-day_str = "06"
+DAY_STR = "06"
 
 
 def solve_day06():
+
     solve_day06_1()
     solve_day06_2()
 
@@ -15,7 +15,7 @@ def solve_day06_1():
     start_time = time.perf_counter()
 
     # read input file
-    input_file = open('day' + day_str + '/input.txt')
+    input_file = open('day' + DAY_STR + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
@@ -35,15 +35,16 @@ def solve_day06_1():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (1) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (1) solution: {} (execution time: {} ms)'.format(DAY_STR, result, round((end_time - start_time) * 1000, 2)))
 
 
 def solve_day06_2():
+
     # start execution time
     start_time = time.perf_counter()
 
     # read input file
-    input_file = open('day' + day_str + '/input.txt')
+    input_file = open('day' + DAY_STR + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
@@ -63,7 +64,7 @@ def solve_day06_2():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (2) solution: {} (execution time: {} ms)'.format(DAY_STR, result, round((end_time - start_time) * 1000, 2)))
 
 
 # loop through characters and check if there is a sequence of characters with length = spm_length
