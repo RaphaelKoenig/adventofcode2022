@@ -1,20 +1,21 @@
-# template day
 import time
 
-day_str = "08"
+DAY_STR = "08"
 
 
 def solve_day08():
+
     solve_day08_1()
     solve_day08_2()
 
 
 def solve_day08_1():
+
     # start execution time
     start_time = time.perf_counter()
 
     # read input file
-    input_file = open('day' + day_str + '/input.txt')
+    input_file = open('day' + DAY_STR + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
@@ -31,7 +32,7 @@ def solve_day08_1():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (1) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (1) solution: {} (execution time: {} ms)'.format(DAY_STR, result, round((end_time - start_time) * 1000, 2)))
 
 
 def solve_day08_2():
@@ -40,7 +41,7 @@ def solve_day08_2():
     start_time = time.perf_counter()
 
     # read input file
-    input_file = open('day' + day_str + '/input.txt')
+    input_file = open('day' + DAY_STR + '/input.txt')
     lines = input_file.readlines()
 
     # remove \n and whitespaces
@@ -57,10 +58,11 @@ def solve_day08_2():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (2) solution: {} (execution time: {} ms)'.format(day_str, result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (2) solution: {} (execution time: {} ms)'.format(DAY_STR, result, round((end_time - start_time) * 1000, 2)))
 
 
 def fill_map_visibility(lines):
+
     row_int, column_int = len(lines), len(lines[0])
     tree_map = [[(0, False) for x in range(column_int)] for y in range(row_int)]
     for index_row, row_str in enumerate(lines):
@@ -70,6 +72,7 @@ def fill_map_visibility(lines):
 
 
 def fill_map_scenic_scores(lines):
+
     row_int, column_int = len(lines), len(lines[0])
     tree_map = [[(0, False) for x in range(column_int)] for y in range(row_int)]
     for index_row, row_str in enumerate(lines):
@@ -116,6 +119,7 @@ def mark_visible_trees(tree_map):
 
 
 def get_number_visible_trees(tree_map):
+
     result = 0
     for index_row in range(len(tree_map)):
         for index_column in range(len(tree_map[0])):
@@ -126,6 +130,7 @@ def get_number_visible_trees(tree_map):
 
 
 def calculate_scenic_scores(tree_map):
+
     for index_row in range(len(tree_map)):
         for index_column in range(len(tree_map[0])):
             calculate_scenic_score(index_row, index_column, tree_map)
@@ -171,6 +176,7 @@ def calculate_scenic_score(tree_row, tree_column, tree_map):
 
 
 def get_max_scenic_score(tree_map):
+
     result = 0
     for index_row in range(len(tree_map)):
         for index_column in range(len(tree_map[0])):
@@ -181,6 +187,7 @@ def get_max_scenic_score(tree_map):
 
 
 def print_map_trees(tree_map):
+
     for index_row in range(len(tree_map)):
         for index_column in range(len(tree_map[0])):
             # bold if tree is visible
@@ -192,6 +199,7 @@ def print_map_trees(tree_map):
 
 
 def print_map_tuples(tree_map):
+
     for index_row in range(len(tree_map)):
         for index_column in range(len(tree_map[0])):
             # bold if tree is visible
