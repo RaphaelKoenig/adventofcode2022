@@ -10,6 +10,7 @@ from day09.day09 import solve_day09
 from day10.day10 import solve_day10
 from day11.day11 import solve_day11
 from day12.day12 import solve_day12
+from day13.day13 import solve_day13
 
 
 def solve_all():
@@ -24,7 +25,8 @@ def solve_all():
     solve_day09()  # solution (1):      6339 (20.04 ms) | (2):        2541 (  63.89 ms) # optimized from 70ms | 321ms
     solve_day10()  # solution (1):     11220 ( 0.23 ms) | (2):    BZPAJELK (   0.72 ms)
     solve_day11()  # solution (1):    113232 ( 2.32 ms) | (2): 29703395016 (1124.62 ms) # (2) optimized from 1.4s
-    solve_day12()  # solution (1):    370    (11.83 ms) | (2):         363 (  11.11 ms) # (2) optimized from 786 ms
+    solve_day12()  # solution (1):       370 (11.83 ms) | (2):         363 (  11.11 ms) # (2) optimized from 786 ms
+    solve_day13()  # solution (1):      5557 (18.57 ms) | (2):       22425 (  22.71 ms)
 
 
 if __name__ == '__main__':
