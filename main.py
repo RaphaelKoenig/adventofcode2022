@@ -32,6 +32,5 @@ def solve_all():
 
 
 if __name__ == '__main__':
-    # solve_all()
-    solve_day14()
+    solve_all()
 
