@@ -25,12 +25,13 @@ def solve_all():
     solve_day08()  # solution (1):      1854 ( 6.58 ms) | (2):      527340 (  25.62 ms)
     solve_day09()  # solution (1):      6339 (20.04 ms) | (2):        2541 (  63.89 ms) # optimized from 70ms | 321ms
     solve_day10()  # solution (1):     11220 ( 0.23 ms) | (2):    BZPAJELK (   0.72 ms)
-    solve_day11()  # solution (1):    113232 ( 2.32 ms) | (2): 29703395016 (1124.62 ms) # (2) optimized from 1.4s
+    solve_day11()  # solution (1):    113232 ( 2.32 ms) | (2): 29703395016 (1124.62 ms) # (2) optimized from 1400 ms
     solve_day12()  # solution (1):       370 (11.83 ms) | (2):         363 (  11.11 ms) # (2) optimized from 786 ms
     solve_day13()  # solution (1):      5557 (18.57 ms) | (2):       22425 (  22.71 ms)
-    solve_day14()  # solution (1):       913 (61.24 ms) | (2):       30762 (2398.28 ms)
+    solve_day14()  # solution (1):       913 (41.96 ms) | (2):       30762 (  30.58 ms) # optimized from 61 ms | 2400 ms
 
 
 if __name__ == '__main__':
-    solve_all()
+    # solve_all()
+    solve_day14()
 
