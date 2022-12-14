@@ -133,4 +133,12 @@ Python solutions of Advent of Code 2022
     <td align="right">22.71 ms</td>    
   </tr>
 
+  <tr>
+    <td><a href="https://adventofcode.com/2022/day/14">Day 14</a></td>
+    <td align="right">913</td>
+    <td align="right">41.96 ms</td>
+    <td align="right">30 762</td>
+    <td align="right">30.58 ms</td>    
+  </tr>
+
 </table>
