@@ -44,7 +44,7 @@ def solve_day15_1():
     # stop execution time
     end_time = time.perf_counter()
 
-    print('Day {} (2) solution: {} (execution time: {} ms)'.format(DAY_STR, result, round((end_time - start_time) * 1000, 2)))
+    print('Day {} (1) solution: {} (execution time: {} ms)'.format(DAY_STR, result, round((end_time - start_time) * 1000, 2)))
 
 
 def solve_day15_2():
