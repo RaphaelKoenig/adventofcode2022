@@ -21,6 +21,7 @@ Python solutions of Advent of Code 2022
 | [Day 13](https://adventofcode.com/2022/day/13) | ⭐ | ⭐ |
 | [Day 14](https://adventofcode.com/2022/day/14) | ⭐ | ⭐ |
 | [Day 15](https://adventofcode.com/2022/day/15) | ⭐ | ⭐ |
+| [Day 16](https://adventofcode.com/2022/day/16) | ⭐ |   |
 <!--- advent_readme_stars table --->
 
 #### Solutions and Execution times
