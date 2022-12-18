@@ -1,6 +1,7 @@
 import sys
 import time
 import re
+from tqdm import tqdm
 
 DAY_STR = "15"
 
@@ -88,7 +89,7 @@ def solve_part_01(sensors, distances, beacons, y):
     result = 0
     x_skip_total = 0
     max_size = get_map_size(sensors, distances)
-    for x in range(max_size[0][0], max_size[0][1] + 1):
+    for x in tqdm(range(max_size[0][0], max_size[0][1] + 1), desc='Day 15 (1) Progress Bar'):
         x += x_skip_total
         if x > max_size[0][1]:
             break
@@ -122,7 +123,7 @@ def solve_part_01(sensors, distances, beacons, y):
 def solve_part_02(location, distances, sensors):
 
     # iterate through every row
-    for x in range(location[0], location[1]+1):
+    for x in tqdm(range(location[0], location[1]+1), desc='Day 15 (2) Progress Bar'):
 
         y_skip_total = 0
 
