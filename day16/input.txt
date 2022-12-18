@@ -1,4 +1,4 @@
-ionValve VR has flow rate=11; tunnels lead to valves LH, KV, BP
+Valve VR has flow rate=11; tunnels lead to valves LH, KV, BP
 Valve UV has flow rate=0; tunnels lead to valves GH, RO
 Valve OH has flow rate=0; tunnels lead to valves AJ, NY
 Valve GD has flow rate=0; tunnels lead to valves TX, PW
