@@ -19,6 +19,7 @@ from day18.day18 import solve_day18
 from day19.day19 import solve_day19
 from day20.day20 import solve_day20
 from day21.day21 import solve_day21
+from day22.day22 import solve_day22
 
 
 def solve_all():
@@ -43,7 +44,8 @@ def solve_all():
     solve_day19()  # solution (1):            817  (  10.5  s) | (2):           4216 ( 335     s) # (pypy) (cached)
     solve_day20()  # solution (1):            2203 ( 39.48 ms) | (2):  6641234038999 ( 408.38 ms) # (pypy)
     solve_day21()  # solution (1): 286698846151845 (  4.65 ms) | (2):  3759566892641 (   1.1   s) # (pypy)
-
+    solve_day22()  # solution (1):          106094 ( 56.26 ms) |
 
 if __name__ == '__main__':
-    solve_all()
+    # solve_all()
+    solve_day22()
